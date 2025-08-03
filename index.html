@@ -4,9 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link id="theme-light" rel="stylesheet" href="theme-light.css"  />
+    <link id="theme-dark" rel="stylesheet" href="theme-dark.css" disabled />
+
 </head>
 <body>
-    <h1>Test website</h1>
+    <nav>
+        <h1 class="title">Test website</h1>
+    </nav>
     <p>hi!</p>
+    <p>ksjdfhsdkfksjdfhk</p>
+    <button id="counter">click me!</button>
+    <h3 id="counter-display">0</h3>
+    <button id="theme-switch" onclick="toggleStyle()">Dark Mode</button>
+
+    <input type="text"/>
+
+    <script src="script.js"></script>
+
+    <audio controls id="song" src="sounds/staywithme.mp3"></audio>
+    <button id="stay-with-me-play" onclick="playStayWithMe()">STAY WITH ME</button>
 </body>
 </html>

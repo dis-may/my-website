@@ -1,0 +1,16 @@
+@view-transition {
+  navigation: auto;
+}
+
+body {
+    font-family:monospace;
+    /* background-color: ; */
+    margin: 5em;
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+    
+}
+
+.title {
+    color: blue;
+}
+
