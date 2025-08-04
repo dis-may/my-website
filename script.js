@@ -58,7 +58,11 @@ function setCuePoint1() {
 // when you click on the player to play, returns focus to the main body
 // instead of the iframe, so keyboard controls still work
 function onPlayerStateChange() {
-
+    if (player.getPlayerState() == YT.PlayerState.PLAYING) {
+        document.getElementById("pb1").innerText = "pause";
+    } else {
+        document.getElementById("pb1").innerText = "play_arrow";
+    }
  document.getElementById("p1").focus();
     console.log("should have fosued");
 }
