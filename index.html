@@ -6,23 +6,65 @@
     <title>Document</title>
     <link id="theme-light" rel="stylesheet" href="theme-light.css"  />
     <link id="theme-dark" rel="stylesheet" href="theme-dark.css" disabled />
-
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body>
-    <nav>
-        <h1 class="title">Test website</h1>
+    <nav class="container">
+        <button class="howtouse"><h2><u>How to use</u></h2></button>
+        <h1 class="title" id="title">YouTube Sampler</h1>
     </nav>
-    <p>hi!</p>
-    <p>ksjdfhsdkfksjdfhk</p>
-    <button id="counter">click me!</button>
-    <h3 id="counter-display">0</h3>
-    <button id="theme-switch" onclick="toggleStyle()">Dark Mode</button>
+    <!-- <iframe 
+        id="yt-frame-1"
+        width="560" 
+        height="315" 
+        src="https://www.youtube.com/embed/nfwaDgXvjnk?si=HJjFrNNLs0cGF1MN&controls=0" 
+        title="YouTube video player" 
+        allow="accelerometer; xautoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" 
+    >
+    </iframe> -->
 
-    <input type="text"/>
+    <div class="divider">
 
+    <div class="video1">
+        <div class="searchbar">
+            <input class="search" placeholder="Enter a YouTube URL" id="search1" type="text" />
+            <button class="go" >Go!</button>
+        </div>
+        <div id="player1"></div>
+        <div id="hcb" class="hotcuebar">
+        <button class="play" id="p1" onclick="togglePlayPause()"><i id="pb1" class="material-icons">play_arrow</i></button>
+        <button class="cuepoint orange" id="cp1" onclick="saveCuePoint1()">--:--:--</button>
+        <button class="cuepoint yellow" onclick="">--:--:--</button>
+        <button class="cuepoint green" onclick="">--:--:--</button>
+        <button class="cuepoint blue" onclick="">--:--:--</button>
+        <button class="cuepoint indigo" onclick="">--:--:--</button>
+        <button class="cuepoint violet" onclick="">--:--:--</button>
+        </div>
+    </div>
+
+    <div class="video2">
+        <div class="searchbar">
+            <input class="search" placeholder="Enter a YouTube URL" id="search2" type="text" />
+            <button class="go" >Go!</button>
+        </div>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/YQZEoZ4W0ac?si=pkUyZJAY2vDV6dnq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <div id="hcb" class="hotcuebar">
+        <button class="play" id="p1" onclick="togglePlayPause()"><i id="pb2" class="material-icons">play_arrow</i></button>
+        <button class="cuepoint orange" id="cp7" onclick="saveCuePoint1()">--:--:--</button>
+        <button class="cuepoint yellow" onclick="">--:--:--</button>
+        <button class="cuepoint green" onclick="">--:--:--</button>
+        <button class="cuepoint blue" onclick="">--:--:--</button>
+        <button class="cuepoint indigo" onclick="">--:--:--</button>
+        <button class="cuepoint violet" onclick="">--:--:--</button>
+        </div>
+    </div>
+
+    </div>
+    
     <script src="script.js"></script>
+    <script src="keyControls.js"></script>
+    <script src="utilities.js"></script>
 
-    <audio controls id="song" src="sounds/staywithme.mp3"></audio>
-    <button id="stay-with-me-play" onclick="playStayWithMe()">STAY WITH ME</button>
 </body>
-</html>
+    </html>
