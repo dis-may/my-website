@@ -181,15 +181,15 @@ body {
 }
 
 .blue-active {
-    background-color: rgba(0, 0, 255, 0.395);
+    background-color: rgba(0, 0, 255, 0.575);
 }
 
 .indigo {
     border-color: indigo;
 }
 
-.blue-active {
-    background-color: rgba(76, 0, 130, 0.404);
+.indigo-active {
+    background-color: rgba(76, 0, 130, 0.568);
 }
 
 .violet {
@@ -197,7 +197,7 @@ body {
 }
 
 .violet-active {
-    background-color: rgba(238, 130, 238, 0.413);
+    background-color: rgba(238, 130, 238, 0.372);
 }
 
 .play {
