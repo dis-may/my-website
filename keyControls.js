@@ -2,7 +2,8 @@ addEventListener("keydown", onKeyDown);
 addEventListener("keyup", onKeyUp);
 
 function onKeyDown(e) {
-    const key = e.code;
+    const key = e.key.toUpperCase();
+    console.log(key);
     const shiftOn = e.shiftKey;
     if (!(document.activeElement == document.getElementById("search1") || 
             document.activeElement == document.getElementById("search2"))) {
@@ -25,7 +26,7 @@ function onKeyDown(e) {
             for (let i=0; i<player.cueKeyMap.length; i++) {
                 let k = player.cueKeyMap[i];
                 const cp = player.cuepoints[i];
-                k = 'Key' + k.toUpperCase();
+                k = k.toUpperCase();
                 if (k == key) {
                     document.getElementById(cp).click();
                 }
@@ -35,7 +36,7 @@ function onKeyDown(e) {
             for (let i=0; i<player.loopKeyMap.length; i++) {
                 let k = player.loopKeyMap[i];
                 const loop = player.loops[i];
-                k = 'Key' + k.toUpperCase();
+                k = k.toUpperCase();
                 if (k == key) {
                     document.getElementById(loop).click();
                 }

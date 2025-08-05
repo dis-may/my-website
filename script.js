@@ -34,7 +34,7 @@ function onYouTubeIframeAPIReady() {
         playButton='pb2',
         searchField='search2',
         searchGo='go2',
-        cuepoints=["cp10", "cp11", "cp12", "cp13", "cp14", "cp15iop"],
+        cuepoints=["cp10", "cp11", "cp12", "cp13", "cp14", "cp15"],
         loops=["l10", "l11", "l12"],
         cueKeyMap=["I", "O", "P", "K", "L", ";"],
         loopKeyMap=[ "K", "L", ";"]
