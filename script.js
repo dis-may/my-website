@@ -86,7 +86,7 @@ function onPlayerStateChange(event) {
     } else if (currPlayer.player.getPlayerState() == YT.PlayerState.PAUSED){
         document.getElementById(currPlayer.playButton).innerText = "play_arrow";
     }
-    document.getElementById(currPlayer.playButton).focus();
+    document.getElementById(currPlayer.playButton[0] + currPlayer.playButton[2]).focus();
     console.log("should have fosued");
 }
 

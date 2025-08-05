@@ -13,16 +13,6 @@
         <button class="howtouse"><h2><u>How to use</u></h2></button>
         <h1 class="title" id="title">YouTube Sampler</h1>
     </nav>
-    <!-- <iframe 
-        id="yt-frame-1"
-        width="560" 
-        height="315" 
-        src="https://www.youtube.com/embed/nfwaDgXvjnk?si=HJjFrNNLs0cGF1MN&controls=0" 
-        title="YouTube video player" 
-        allow="accelerometer; xautoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-        referrerpolicy="strict-origin-when-cross-origin" 
-    >
-    </iframe> -->
 
     <div class="divider">
 
@@ -33,7 +23,7 @@
         </div>
         <div id="player1"></div> <!-- is replaced by Youtube embed iframe in JS-->
         <div id="hcb" class="hotcuebar">
-        <button class="play" id="p1" onclick="togglePlayPause()"><i id="pb1" class="material-icons">play_arrow</i></button>
+        <button class="play" id="p1" onclick="player1.togglePlayPause()"><i id="pb1" class="material-icons">play_arrow</i></button>
         <button class="cuepoint orange" id="cp00" onclick="pressCuePoint(this.id)">--:--:--</button>
         <button class="cuepoint yellow" id="cp01" onclick="pressCuePoint(this.id)">--:--:--</button>
         <button class="cuepoint green" id="cp02" onclick="pressCuePoint(this.id)">--:--:--</button>
@@ -50,7 +40,6 @@
         </div>
         <div id="player2"></div> <!-- is replaced by Youtube embed iframe in JS-->
 
-        <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/YQZEoZ4W0ac?si=pkUyZJAY2vDV6dnq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
         <div id="hcb" class="hotcuebar">
         <button class="play" id="p2" onclick="player2.togglePlayPause()"><i id="pb2" class="material-icons">play_arrow</i></button>
         <button class="cuepoint orange" id="cp10" onclick="pressCuePoint(this.id)">--:--:--</button>
