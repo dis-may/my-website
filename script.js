@@ -147,8 +147,8 @@ class YoutubePlayer {
         }
     }
     loadVideo() {
-        console.log("here");
-        let URL = document.getElementById(searchField).value;
+        console.log(this.id);
+        let URL = document.getElementById(this.searchField).value;
         URL = URL.substring(URL.length - 11, URL.length);
         this.player.loadVideoById(URL);
     }
