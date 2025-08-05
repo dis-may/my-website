@@ -11,7 +11,13 @@ function onKeyDown(e) {
             for (let i=0; i<cuepoints.length; i++) {
                 const cp = cuepoints[i];
                 cp.onclick = () => setCuePoint(cp.id);
+                cp.classList.add("bold-text");
             }
+            const keybinds = document.getElementsByClassName("keybinds");
+            for (const kb of keybinds) {
+                kb.classList.add("white-text");
+            }
+
         }
         for (let player of players) {
 
@@ -35,20 +41,33 @@ function onKeyDown(e) {
                 }
             }
         }
+        // scrub controls
+        if (key == 'ArrowLeft') {
+            player1.player.seekTo(player1.player.getCurrentTime() - 5);
+        } else if (key == 'ArrowRight') {
+            player1.player.seekTo(player1.player.getCurrentTime() + 5);
+        } else if (key == 'KeyZ') {
+            player2.player.seekTo(player2.player.getCurrentTime() - 5);
+        } else if (key == 'KeyC') {
+            player2.player.seekTo(player2.player.getCurrentTime() + 5);
+        }
     }
 }
 
 
 function onKeyUp(e) {
     const shiftOn = e.shiftKey;
-    // console.log(shiftOff);
 
     if (!shiftOn) {
         const cuepoints = document.getElementsByClassName("cuepoint");
         for (let i=0; i<cuepoints.length; i++) {
             const cp = cuepoints[i];
-            console.log(cp);
             cp.onclick = () => pressCuePoint(cp.id);
+            cp.classList.remove('bold-text');
+        }
+        const keybinds = document.getElementsByClassName("keybinds");
+            for (const kb of keybinds) {
+                kb.classList.remove("white-text");
         }
     }
 }

@@ -16,13 +16,14 @@ let players = [];
 function onYouTubeIframeAPIReady() {
     player1 = new YoutubePlayer(
         id='player1',
-        videoId='c9O3OeA1cy4', // shiki no uta
+        // videoId='c9O3OeA1cy4', // shiki no uta
+        videoId='nQstIbfauyo', // meme sound effects
         playButton='pb1',
         searchField='search1',
         searchGo='go1',
-        cuepoints=["cp00", "cp01", "cp02"],
+        cuepoints=["cp00", "cp01", "cp02", "cp03", "cp04", "cp05"],
         loops=["l00", "l01", "l02"],
-        cueKeyMap=["Q", "W", "E",],
+        cueKeyMap=["Q", "W", "E", "A", "S", "D"],
         loopKeyMap=[ "A", "S", "D"]
 
     );
@@ -33,9 +34,9 @@ function onYouTubeIframeAPIReady() {
         playButton='pb2',
         searchField='search2',
         searchGo='go2',
-        cuepoints=["cp10", "cp11", "cp12"],
+        cuepoints=["cp10", "cp11", "cp12", "cp13", "cp14", "cp15iop"],
         loops=["l10", "l11", "l12"],
-        cueKeyMap=["I", "O", "P",],
+        cueKeyMap=["I", "O", "P", "K", "L", ";"],
         loopKeyMap=[ "K", "L", ";"]
 
     );
@@ -139,10 +140,10 @@ class YoutubePlayer {
     togglePlayPause() {
         if (this.player.getPlayerState() == YT.PlayerState.PLAYING) {
             this.player.pauseVideo();
-            document.getElementById(playButton).innerText = "play_arrow";
+            document.getElementById(this.playButton).innerText = "play_arrow";
         } else  {
             this.player.playVideo();
-            document.getElementById(playButton).innerText = "pause";
+            document.getElementById(this.playButton).innerText = "pause";
 
         }
     }

@@ -214,3 +214,44 @@ body {
     outline:none;
     border: 2px solid rgb(170, 0, 0);
 }
+
+.keybinds {
+    color: rgb(159, 159, 159);
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3px;
+    padding: 0px 20px;
+}
+
+.white-text {
+    color: white;
+}
+
+#no-highlight1 {
+    color: rgb(159, 159, 159);
+}
+
+#no-highlight2 {
+    color: rgb(159, 159, 159);
+}
+
+.bold-text {
+    font-weight: bold;
+}
+
+.instructions {
+    color: rgb(175, 175, 175);
+    font-size: 18px;
+    text-align: center;
+
+
+}
+.steps {
+    display: none;
+}
+
+.instructions-title:hover + .steps {
+    display: block;
+    cursor: pointer;
+}
