@@ -20,7 +20,7 @@ function onKeyDown(e) {
                 setCuePoint1();
             }
             const cuepoints = document.getElementsByClassName("cuepoint");
-            for (let i=3; i<6; i++) {
+            for (let i=0; i<cuepoints.length; i++) {
                 const cp = cuepoints[i];
                 console.log(cp);
                 cp.onclick = () => setCuePoint(cp.id);
@@ -42,7 +42,7 @@ function onKeyUp(e) {
 
     if (!shiftOn) {
         const cuepoints = document.getElementsByClassName("cuepoint");
-        for (let i=3; i<6; i++) {
+        for (let i=0; i<cuepoints.length; i++) {
             const cp = cuepoints[i];
             console.log(cp);
             cp.onclick = () => pressCuePoint(cp.id);
