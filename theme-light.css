@@ -248,7 +248,7 @@ body {
 
 }
 .steps {
-    display: none;
+    display: block;
 }
 
 .instructions-title:hover + .steps {

@@ -43,13 +43,13 @@ function onKeyDown(e) {
             }
         }
         // scrub controls
-        if (key == 'ArrowLeft') {
+        if (key == 'ARROWLEFT') {
             player1.player.seekTo(player1.player.getCurrentTime() - 5);
-        } else if (key == 'ArrowRight') {
+        } else if (key == 'ARROWRIGHT') {
             player1.player.seekTo(player1.player.getCurrentTime() + 5);
-        } else if (key == 'KeyZ') {
+        } else if (key == 'Z') {
             player2.player.seekTo(player2.player.getCurrentTime() - 5);
-        } else if (key == 'KeyC') {
+        } else if (key == 'C') {
             player2.player.seekTo(player2.player.getCurrentTime() + 5);
         }
     }

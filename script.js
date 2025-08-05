@@ -150,7 +150,11 @@ class YoutubePlayer {
     loadVideo() {
         console.log(this.id);
         let URL = document.getElementById(this.searchField).value;
+        if (URL.indexOf("&") != -1) {
+            URL = URL.substring(0, URL.indexOf("&"));
+        }
         URL = URL.substring(URL.length - 11, URL.length);
+        console.log(URL);
         this.player.loadVideoById(URL);
     }
 }
