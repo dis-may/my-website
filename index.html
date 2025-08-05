@@ -29,34 +29,36 @@
     <div class="video1">
         <div class="searchbar">
             <input class="search" placeholder="Enter a YouTube URL" id="search1" type="text" />
-            <button class="go" >Go!</button>
+            <button class="go" id="go1" onclick="loadVideo()">Go!</button>
         </div>
-        <div id="player1"></div>
+        <div id="player1"></div> <!-- is replaced by Youtube embed iframe in JS-->
         <div id="hcb" class="hotcuebar">
         <button class="play" id="p1" onclick="togglePlayPause()"><i id="pb1" class="material-icons">play_arrow</i></button>
-        <button class="cuepoint orange" id="cp1" onclick="saveCuePoint1()">--:--:--</button>
-        <button class="cuepoint yellow" onclick="">--:--:--</button>
-        <button class="cuepoint green" onclick="">--:--:--</button>
-        <button class="cuepoint blue" onclick="">--:--:--</button>
-        <button class="cuepoint indigo" onclick="">--:--:--</button>
-        <button class="cuepoint violet" onclick="">--:--:--</button>
+        <button class="cuepoint orange" id="cp00" onclick="saveCuePoint1()">--:--:--</button>
+        <button class="cuepoint yellow" id="cp01" onclick="">--:--:--</button>
+        <button class="cuepoint green" id="cp02" onclick="">--:--:--</button>
+        <button class="loop blue" id="l00" onclick="">--:--:--</button>
+        <button class="loop indigo" id="l01" onclick="">--:--:--</button>
+        <button class="loop violet" id="l02" onclick="">--:--:--</button>
         </div>
     </div>
 
     <div class="video2">
         <div class="searchbar">
             <input class="search" placeholder="Enter a YouTube URL" id="search2" type="text" />
-            <button class="go" >Go!</button>
+            <button class="go" id="go2" onclick="player2.loadVideo()">Go!</button>
         </div>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/YQZEoZ4W0ac?si=pkUyZJAY2vDV6dnq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <div id="player2"></div> <!-- is replaced by Youtube embed iframe in JS-->
+
+        <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/YQZEoZ4W0ac?si=pkUyZJAY2vDV6dnq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
         <div id="hcb" class="hotcuebar">
-        <button class="play" id="p1" onclick="togglePlayPause()"><i id="pb2" class="material-icons">play_arrow</i></button>
-        <button class="cuepoint orange" id="cp7" onclick="saveCuePoint1()">--:--:--</button>
-        <button class="cuepoint yellow" onclick="">--:--:--</button>
-        <button class="cuepoint green" onclick="">--:--:--</button>
-        <button class="cuepoint blue" onclick="">--:--:--</button>
-        <button class="cuepoint indigo" onclick="">--:--:--</button>
-        <button class="cuepoint violet" onclick="">--:--:--</button>
+        <button class="play" id="p2" onclick="player2.togglePlayPause()"><i id="pb2" class="material-icons">play_arrow</i></button>
+        <button class="cuepoint orange" id="cp10" onclick="pressCuePoint(this.id)">--:--:--</button>
+        <button class="cuepoint yellow" id="cp11" onclick="pressCuePoint(this.id)">--:--:--</button>
+        <button class="cuepoint green" id="cp12" onclick="pressCuePoint(this.id)">--:--:--</button>
+        <button class="loop blue" id="l0"onclick="">--:--:--</button>
+        <button class="loop indigo" id="l11" onclick="">--:--:--</button>
+        <button class="loop violet" id="l12" onclick="">--:--:--</button>
         </div>
     </div>
 

@@ -1,0 +1,4 @@
+- add keyboard controls [A][S][D] etc. to hotkeys
+- have recommended videos
+- loops
+- eye show showing instructiuons nad keyboard shortcuts

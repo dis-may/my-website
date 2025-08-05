@@ -1,6 +1,7 @@
+addEventListener("keydown", onKeyDown);
 addEventListener("keyup", onKeyUp);
 
-function onKeyUp(e) {
+function onKeyDown(e) {
     const key = e.code;
     const shiftOn = e.shiftKey;
     console.log(e.code);
@@ -18,6 +19,12 @@ function onKeyUp(e) {
             if (key == 'KeyS') {
                 setCuePoint1();
             }
+            const cuepoints = document.getElementsByClassName("cuepoint");
+            for (let i=3; i<6; i++) {
+                const cp = cuepoints[i];
+                console.log(cp);
+                cp.onclick = () => setCuePoint(cp.id);
+            }
         }
 
         if (key == 'ArrowLeft') {
@@ -29,3 +36,16 @@ function onKeyUp(e) {
 }
 
 
+function onKeyUp(e) {
+    const shiftOn = e.shiftKey;
+    // console.log(shiftOff);
+
+    if (!shiftOn) {
+        const cuepoints = document.getElementsByClassName("cuepoint");
+        for (let i=3; i<6; i++) {
+            const cp = cuepoints[i];
+            console.log(cp);
+            cp.onclick = () => pressCuePoint(cp.id);
+        }
+    }
+}

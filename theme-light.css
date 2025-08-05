@@ -135,12 +135,21 @@ body {
     /* margin-right: 10px; */
 }
 
+.loop {
+    background-color: black;
+    border: 2px solid black;
+    color: white;
+    font-family: monospace;
+    padding: 10px 5px;
+    /* margin-right: 10px; */
+}
+
 .red {
     border-color: red;
 }
 
 .red-active {
-    background-color: red;
+    background-color: rgba(255, 0, 0, 0.4);
 }
 
 .orange {
@@ -148,7 +157,7 @@ body {
 }
 
 .orange-active {
-    background-color: orange;
+    background-color: rgba(255, 166, 0, 0.414);
 }
 
 .yellow {
@@ -156,7 +165,7 @@ body {
 }
 
 .yellow-active {
-    background-color: yellow;
+    background-color: rgba(255, 255, 0, 0.422);
 }
 
 .green {
@@ -164,7 +173,7 @@ body {
 }
 
 .green-active {
-    background-color: green;
+    background-color: rgba(0, 128, 0, 0.413);
 }
 
 .blue {
@@ -172,7 +181,7 @@ body {
 }
 
 .blue-active {
-    background-color: blue;
+    background-color: rgba(0, 0, 255, 0.395);
 }
 
 .indigo {
@@ -180,7 +189,7 @@ body {
 }
 
 .blue-active {
-    background-color: indigo;
+    background-color: rgba(76, 0, 130, 0.404);
 }
 
 .violet {
@@ -188,7 +197,7 @@ body {
 }
 
 .violet-active {
-    background-color: violet;
+    background-color: rgba(238, 130, 238, 0.413);
 }
 
 .play {
