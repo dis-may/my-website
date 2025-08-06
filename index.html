@@ -20,6 +20,7 @@
         <div class="searchbar">
             <input class="search" placeholder="Enter a YouTube URL" id="search1" type="text" />
             <button class="go" id="go1" onclick="player1.loadVideo()">Go!</button>
+            <button class="random" id="r1" onclick="loadRandomVideo(this.id)"><i class="material-icons">shuffle</i></button>
         </div>
         <div id="player1"></div> <!-- is replaced by Youtube embed iframe in JS-->
         <div id="hcb" class="hotcuebar">
@@ -49,6 +50,7 @@
         <div class="searchbar">
             <input class="search" placeholder="Enter a YouTube URL" id="search2" type="text" />
             <button class="go" id="go2" onclick="player2.loadVideo()">Go!</button>
+            <button class="random" id="r2" onclick="loadRandomVideo(this.id)"><i class="material-icons">shuffle</i></button>
         </div>
         <div id="player2"></div> <!-- is replaced by Youtube embed iframe in JS-->
 
@@ -79,11 +81,17 @@
     <div class="instructions">
         <h2 class="instructions-title lighter-white"><u>How to use</u></h2>
         <div class="steps">
-            <p>Press a button/key to save a point in the video.</p>
-            <p>Press it again to return to that point.</p>
-            <p>Overwrite a previous cue point by holding [Shift], then pressing the button/key</p>
-            <p>Use left and right arrow keys for skipping through the left video</p>
-            <p>Use [Z] and [C] for skipping through the right video</p>
+            <p>1. Click/Press a button/key to save a point in the video.</p>
+            <p>2. Click/Press it again to return to that point.</p>
+            <p>3. Press and hold a <b>key</b> to play from its cue point.</p>
+            <p>4. If the video was originally paused, when you release the key, it will pause again</p>
+            <p>5. If the video was originally playing, it will resume playing</p>
+
+            <p>~</p>
+            <p>6. Overwrite a previous cue point by holding [Shift], then pressing the button/key</p>
+            <p>~</p>
+            <p>7. Use left and right arrow keys for skipping through the left player</p>
+            <p>8. Use [Z] and [C] for skipping through the right player</p>
             
 
             <h2 class="troubleshooting lighter-white"><u>Troubleshooting</u></h2>
@@ -99,6 +107,7 @@
     <script src="script.js"></script>
     <script src="keyControls.js"></script>
     <script src="utilities.js"></script>
+    <script src="songs.js"></script>
 
 </body>
     </html>

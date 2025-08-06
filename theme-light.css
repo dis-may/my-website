@@ -69,7 +69,7 @@ body {
     display: block;
     font-family: monospace;
     min-height: 20px;
-    min-width: 430px;
+    min-width: 400px;
     border-radius: 20px;
     padding: 10px;
     padding-left: 15px;
@@ -89,6 +89,7 @@ body {
 .searchbar {
     display: flex;
     margin-bottom:10px;
+    justify-content: space-between;
 }
 
 .go {
@@ -97,7 +98,6 @@ body {
     min-height: 20px;
     min-width: 70px;
     border-radius: 20px;
-    margin-left: 20px;
     padding: 10px;
     padding-left: 15px;
     outline: none;
@@ -109,7 +109,7 @@ body {
 }
 
 .go:hover {
-    background-color: rgb(216, 0, 0);
+    background-color: rgb(168, 0, 0);
     /* transition: background-color 0.5s ease-in-out; */
     cursor: pointer;
 }
@@ -132,6 +132,7 @@ body {
     color: white;
     font-family: monospace;
     padding: 10px 5px;
+    cursor: pointer;
     /* margin-right: 10px; */
 }
 
@@ -208,6 +209,7 @@ body {
     /* padding: 5px 3px; */
     /* margin-right: 10px; */
     min-width: 80px;
+    cursor: pointer;
 }
 
 .play:focus {
@@ -268,4 +270,19 @@ body {
 
 .lighter-white {
     color: rgb(235, 235, 235);
+}
+
+.random {
+    width: 40px;
+    height: 40px;
+    color: red;
+    border-radius: 50%;
+    border: 2px solid red;
+    background-color: black;
+}
+
+.random:hover {
+    cursor: pointer;
+    border-color: rgb(182, 0, 0);
+    color: rgb(182, 0, 0);  
 }
