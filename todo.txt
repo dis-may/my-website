@@ -2,3 +2,10 @@
 - have recommended videos
 - loops
 - eye show showing instructiuons nad keyboard shortcuts
+
+
+- random videos (load from JSON)
+- how cue autoplay behaviour
+- add enter button for searching
+- fun easter egg
+- autoplay rick roll

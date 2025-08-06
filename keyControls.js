@@ -5,6 +5,7 @@ function onKeyDown(e) {
     const key = e.key.toUpperCase();
     console.log(key);
     const shiftOn = e.shiftKey;
+    // check if the search field is focused. if so, ignore the keybinds
     if (!(document.activeElement == document.getElementById("search1") || 
             document.activeElement == document.getElementById("search2"))) {
         if (shiftOn) {
@@ -51,6 +52,18 @@ function onKeyDown(e) {
             player2.player.seekTo(player2.player.getCurrentTime() - 5);
         } else if (key == 'C') {
             player2.player.seekTo(player2.player.getCurrentTime() + 5);
+        }
+    } else {
+        // else means if the search field is focused. 
+        // if so, want enter key to press Go! button
+        if (document.activeElement == document.getElementById("search1")) {
+            if (key == 'ENTER') {
+                document.getElementById('go1').click();
+            }
+        } else if (document.activeElement == document.getElementById("search2")) {
+            if (key == 'ENTER') {
+                document.getElementById('go2').click();
+            }
         }
     }
 }

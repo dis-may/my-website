@@ -1,10 +1,12 @@
+// if using iframes, the below code stops caching and forces reload
+
 // window.onload = () => {
 //     // let iframe = document.getElementById("yt-frame-1");
 //     // iframe.src = iframe.src;
 //     iframe = document.getElementById("yt-frame-2");
 //     iframe.src = iframe.src;
 // }
-// if using iframes, the above stops caching and forces reload
+
 
 
 const tag = document.createElement('script');
@@ -63,8 +65,6 @@ function pressCuePoint(id) {
     const playerNumber = parseInt(id[2]);
     const cuepointNumber = parseInt(id[3]);
     const player = players[playerNumber];
-    // console.log(players);
-    // console.log(id[-2]);
     const hasCuePoint = player.hasCuepoints[cuepointNumber];
     if (!hasCuePoint) {
         setCuePoint(id);
@@ -148,14 +148,14 @@ class YoutubePlayer {
         }
     }
     loadVideo() {
-        console.log(this.id);
         let URL = document.getElementById(this.searchField).value;
+        // remove the extra parameters
         if (URL.indexOf("&") != -1) {
             URL = URL.substring(0, URL.indexOf("&"));
         }
+        // isolate the Video ID, which is 11 characters long
         URL = URL.substring(URL.length - 11, URL.length);
-        console.log(URL);
-        this.player.loadVideoById(URL);
+        this.player.cueVideoById(URL);
     }
 }
 
