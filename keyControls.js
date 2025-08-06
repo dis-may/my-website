@@ -52,6 +52,10 @@ function onKeyDown(e) {
             player2.player.seekTo(player2.player.getCurrentTime() - 5);
         } else if (key == 'C') {
             player2.player.seekTo(player2.player.getCurrentTime() + 5);
+        } else if (key == 'F') {
+            player1.togglePlayPause();
+        } else if (key == 'J') {
+            player2.togglePlayPause();
         }
     } else {
         // else means if the search field is focused. 
