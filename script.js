@@ -78,9 +78,6 @@ function pressCuePoint(id) {
 // instead of the iframe, so keyboard controls still work
 function onPlayerStateChange(event) {
     const currPlayer = players[event.target.id - 1];
-    console.log(currPlayer);
-    console.log(currPlayer.id);
-    console.log(currPlayer.playButton);
 
     if (currPlayer.player.getPlayerState() == YT.PlayerState.PLAYING) {
         document.getElementById(currPlayer.playButton).innerText = "pause";
@@ -88,7 +85,7 @@ function onPlayerStateChange(event) {
         document.getElementById(currPlayer.playButton).innerText = "play_arrow";
     }
     document.getElementById(currPlayer.playButton[0] + currPlayer.playButton[2]).focus();
-    console.log("should have fosued");
+    console.log("should have focused");
 }
 
 function togglePlayPause() {

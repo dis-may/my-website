@@ -1,46 +1,82 @@
 addEventListener("keydown", onKeyDown);
 addEventListener("keyup", onKeyUp);
 
+let wasPlaying = [true, true];
+let lastKey = null;
+
 function onKeyDown(e) {
+
     const key = e.key.toUpperCase();
+
+    if (lastKey == key) {
+        return;
+    }
+
     console.log(key);
     const shiftOn = e.shiftKey;
     // check if the search field is focused. if so, ignore the keybinds
     if (!(document.activeElement == document.getElementById("search1") || 
             document.activeElement == document.getElementById("search2"))) {
-        if (shiftOn) {
+        // HOTCUES!!!!
+        // change colour if shift is on
+        if (shiftOn && key == "SHIFT") {
             const cuepoints = document.getElementsByClassName("cuepoint");
             for (let i=0; i<cuepoints.length; i++) {
                 const cp = cuepoints[i];
-                cp.onclick = () => setCuePoint(cp.id);
                 cp.classList.add("bold-text");
             }
             const keybinds = document.getElementsByClassName("keybinds");
             for (const kb of keybinds) {
                 kb.classList.add("white-text");
             }
+        } else if (shiftOn && key != 'SHIFT') {
+            for (let j=0; j<players.length; j++) {
+                const player = players[j];
+                // cuepoints
+                for (let i=0; i<player.cueKeyMap.length; i++) {
+                    let k = player.cueKeyMap[i];
+                    const cp = player.cuepoints[i];
+                    k = k.toUpperCase();
 
-        }
-        for (let player of players) {
-
-            // cuepoints
-            for (let i=0; i<player.cueKeyMap.length; i++) {
-                let k = player.cueKeyMap[i];
-                const cp = player.cuepoints[i];
-                k = k.toUpperCase();
-                if (k == key) {
-                    document.getElementById(cp).click();
+                    if (k == key) {
+                        lastKey = key;
+                        setCuePoint(cp);
+                    }
                 }
             }
 
-            // loops
-            for (let i=0; i<player.loopKeyMap.length; i++) {
-                let k = player.loopKeyMap[i];
-                const loop = player.loops[i];
-                k = k.toUpperCase();
-                if (k == key) {
-                    document.getElementById(loop).click();
+        } else {
+            for (let j=0; j<players.length; j++) {
+                const player = players[j];
+                // cuepoints
+                for (let i=0; i<player.cueKeyMap.length; i++) {
+                    let k = player.cueKeyMap[i];
+                    const cp = player.cuepoints[i];
+                    k = k.toUpperCase();
+
+                    if (k == key) {
+                        lastKey = key;
+                        // document.getElementById(cp).click();
+                        if (player.player.getPlayerState() == YT.PlayerState.PLAYING) {
+                            pressCuePoint(cp);
+                        } else {
+                            pressCuePoint(cp);
+                            wasPlaying[j] = false;
+                            player.player.playVideo();
+                        }
+                    }
                 }
+
+                // loops
+                // so far loops not implemented yet, replaced with hotkeys
+                // for (let i=0; i<player.loopKeyMap.length; i++) {
+                //     let k = player.loopKeyMap[i];
+                //     const loop = player.loops[i];
+                //     k = k.toUpperCase();
+                //     if (k == key) {
+                //         document.getElementById(loop).click();
+                //     }
+                // }
             }
         }
         // scrub controls
@@ -70,6 +106,7 @@ function onKeyDown(e) {
             }
         }
     }
+    
 }
 
 
@@ -88,4 +125,17 @@ function onKeyUp(e) {
                 kb.classList.remove("white-text");
         }
     }
+    const combinedMap = [];
+    for (p of players) {
+        combinedMap.push(...p.cueKeyMap);
+    }
+    if (combinedMap.includes(lastKey) == true) {
+        for (let i=0; i<wasPlaying.length; i++) {
+            if (wasPlaying[i] == false) {
+                players[i].player.pauseVideo();
+                wasPlaying[i] = true;
+            }
+        }
+    }
+    lastKey = null;
 }

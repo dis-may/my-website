@@ -255,3 +255,17 @@ body {
     display: block;
     cursor: pointer;
 }
+
+.troubleshooting {
+    margin-top: 50px;
+}
+
+.troubleshooting-bullets {
+    /* text-align: left; */
+    max-width: 50em;
+    margin: auto;
+}
+
+.lighter-white {
+    color: rgb(235, 235, 235);
+}
