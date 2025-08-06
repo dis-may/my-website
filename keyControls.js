@@ -18,11 +18,12 @@ function onKeyDown(e) {
     if (!(document.activeElement == document.getElementById("search1") || 
             document.activeElement == document.getElementById("search2"))) {
         // HOTCUES!!!!
-        // change colour if shift is on
+        // change colour if shift is on AND change function
         if (shiftOn && key == "SHIFT") {
             const cuepoints = document.getElementsByClassName("cuepoint");
             for (let i=0; i<cuepoints.length; i++) {
                 const cp = cuepoints[i];
+                cp.onclick = () => setCuePoint(cp.id);
                 cp.classList.add("bold-text");
             }
             const keybinds = document.getElementsByClassName("keybinds");
@@ -30,6 +31,10 @@ function onKeyDown(e) {
                 kb.classList.add("white-text");
             }
         } else if (shiftOn && key != 'SHIFT') {
+            // quick fix since shift + semicolon is : not ;
+            if (key == ':') {
+                setCuePoint('cp15');
+            }
             for (let j=0; j<players.length; j++) {
                 const player = players[j];
                 // cuepoints
@@ -42,6 +47,8 @@ function onKeyDown(e) {
                         lastKey = key;
                         setCuePoint(cp);
                     }
+
+                    
                 }
             }
 

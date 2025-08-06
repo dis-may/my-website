@@ -125,7 +125,7 @@ class YoutubePlayer {
         playerVars: {
             playsinline: 1,
             controls: 1,
-            disablekb: 0,
+            disablekb: 1,
             color: "white",
         },
         events: {
@@ -171,4 +171,3 @@ class YoutubePlayer {
         // this.player.cueVideoById(URL);
     }
 }
-
