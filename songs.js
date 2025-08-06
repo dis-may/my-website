@@ -69,6 +69,11 @@ const songs = [
     "channel": "namolla family hotshow",
     "url": "https://www.youtube.com/watch?v=FoO7Pmx0bE4",
   },
+  {
+    "name": "The Beths - \"Mother, Pray For Me\" (Official)",
+    "channel": "The Beths",
+    "url":"https://www.youtube.com/watch?v=v71QgHSMpnk",
+  }
 
 ]
 

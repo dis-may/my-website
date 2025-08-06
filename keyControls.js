@@ -2,13 +2,14 @@ addEventListener("keydown", onKeyDown);
 addEventListener("keyup", onKeyUp);
 
 let wasPlaying = [true, true];
-let lastKey = null;
+let pushedKeys = [];
 
 function onKeyDown(e) {
 
     const key = e.key.toUpperCase();
 
-    if (lastKey == key) {
+    // ignore key if it is the last one pressed (being held)
+    if (pushedKeys[pushedKeys.length-1] == key) {
         return;
     }
 
@@ -44,7 +45,7 @@ function onKeyDown(e) {
                     k = k.toUpperCase();
 
                     if (k == key) {
-                        lastKey = key;
+                        pushedKeys.push(key);
                         setCuePoint(cp);
                     }
 
@@ -62,9 +63,12 @@ function onKeyDown(e) {
                     k = k.toUpperCase();
 
                     if (k == key) {
-                        lastKey = key;
+                        pushedKeys.push(key);
                         // document.getElementById(cp).click();
-                        if (player.player.getPlayerState() != YT.PlayerState.PAUSED) {
+                        if (player.player.getPlayerState() == YT.PlayerState.PLAYING || 
+                            player.player.getPlayerState() == YT.PlayerState.BUFFERING) {
+                            // if the player is currently playing or buffering
+                            // including the buffering case stops lag when trying to jump to cue point
                             pressCuePoint(cp);
                         } else {
                             pressCuePoint(cp);
@@ -113,12 +117,14 @@ function onKeyDown(e) {
             }
         }
     }
+    console.log(pushedKeys);
     
 }
 
 
 function onKeyUp(e) {
     const shiftOn = e.shiftKey;
+    const key = e.key.toUpperCase();
 
     if (!shiftOn) {
         const cuepoints = document.getElementsByClassName("cuepoint");
@@ -136,13 +142,26 @@ function onKeyUp(e) {
     for (p of players) {
         combinedMap.push(...p.cueKeyMap);
     }
-    if (combinedMap.includes(lastKey) == true) {
+    // quick fix since shift + ";" gives :  
+    combinedMap.push(":");
+    // if (combinedMap.includes(pushedKeys) == true) {
+    //     for (let i=0; i<wasPlaying.length; i++) {
+    //         if (wasPlaying[i] == false) {
+    //             players[i].player.pauseVideo();
+    //             wasPlaying[i] = true;
+    //         }
+    //     }
+    // }
+    keyIndex = pushedKeys.indexOf(key)
+    if (combinedMap.includes(key) && keyIndex != -1) {
+        pushedKeys.splice(keyIndex, 1);
         for (let i=0; i<wasPlaying.length; i++) {
-            if (wasPlaying[i] == false) {
+            if (wasPlaying[i] == false && pushedKeys.length == 0) {
                 players[i].player.pauseVideo();
                 wasPlaying[i] = true;
             }
         }
     }
-    lastKey = null;
+    console.log(pushedKeys);
+    // pushedKeys = null;
 }

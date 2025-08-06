@@ -1,10 +1,6 @@
-- add keyboard controls [A][S][D] etc. to hotkeys
-- have recommended videos
 - loops
-- eye show showing instructiuons nad keyboard shortcuts
 
-
-- random videos (load from JSON)
-- how cue autoplay behaviour
 - fun easter egg
-- autoplay rick roll
+
+- remove controls in youtube embed player to avoid keybinds not working bug
+- replace with volume and speed controls below 
