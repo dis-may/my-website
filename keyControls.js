@@ -64,7 +64,7 @@ function onKeyDown(e) {
                     if (k == key) {
                         lastKey = key;
                         // document.getElementById(cp).click();
-                        if (player.player.getPlayerState() == YT.PlayerState.PLAYING) {
+                        if (player.player.getPlayerState() != YT.PlayerState.PAUSED) {
                             pressCuePoint(cp);
                         } else {
                             pressCuePoint(cp);
