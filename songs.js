@@ -76,7 +76,6 @@ function loadRandomVideo(id) {
     const i = Math.floor(Math.random() * songs.length);
     const song = songs[i];
     const URL = song.url.substring(song.url.length-11,song.url.length);
-    console.log(i, song, URL);
     let play = false;
 
     // want to play rickroll immediately
