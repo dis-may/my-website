@@ -149,13 +149,29 @@ class YoutubePlayer {
     }
     loadVideo() {
         let URL = document.getElementById(this.searchField).value;
-        // remove the extra parameters
-        if (URL.indexOf("&") != -1) {
-            URL = URL.substring(0, URL.indexOf("&"));
+        // there are two main types of youtube links
+        // https://www.youtube.com/watch?v=HDkkJ3hoiBE and 
+        // https://youtu.be/HDkkJ3hoiBE?si=PMjsZDkweEX4X79K
+        // in both cases, the 11 character video ID is HDkkJ3hoiBE
+
+
+        if (URL.indexOf("youtube.com") != -1) {
+            // remove the extra parameters
+            if (URL.indexOf("&") != -1) {
+                URL = URL.substring(0, URL.indexOf("&"));
+            }
+            // isolate the Video ID, which is 11 characters long
+            URL = URL.substring(URL.length - 11, URL.length);
+            this.player.cueVideoById(URL);
+        } else if (URL.indexOf("youtu.be") != -1) {
+            const i = URL.indexOf("youtu.be");
+            // isolate the Video ID
+            URL = URL.substring(i+9,i+20);
+            this.player.cueVideoById(URL);
+        } else {
+            alert("Invalid YouTube URL!")
         }
-        // isolate the Video ID, which is 11 characters long
-        URL = URL.substring(URL.length - 11, URL.length);
-        this.player.cueVideoById(URL);
+        // this.player.cueVideoById(URL);
     }
 }
 
