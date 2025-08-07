@@ -10,3 +10,13 @@ function formatTime(totalSeconds) {
 
   return `${formattedMinutes}:${formattedSeconds}.${formattedMilliseconds}`;
 }
+
+function containsAny(arr1, arr2) {
+  // The some() method checks if at least one element in arr1
+  // satisfies the condition provided by the callback function.
+  return arr1.some(item => {
+    // The includes() method checks if the current 'item' from arr1
+    // is present in arr2.
+    return arr2.includes(item);
+  });
+}

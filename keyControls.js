@@ -100,9 +100,19 @@ function onKeyDown(e) {
         } else if (key == 'C') {
             player2.player.seekTo(player2.player.getCurrentTime() + 5);
         } else if (key == 'F') {
-            player1.togglePlayPause();
+            if (containsAny(player1.cueKeyMap, pushedKeys)) {
+                // if any keys are currently held, keep playing instead of toggling
+                wasPlaying[0] = true;
+            } else {
+                player1.togglePlayPause();
+            }
         } else if (key == 'J') {
-            player2.togglePlayPause();
+            if (containsAny(player2.cueKeyMap, pushedKeys)) {
+                // if any keys are currently held, keep playing instead of toggling
+                wasPlaying[1] = true;
+            } else {
+                player2.togglePlayPause();
+            }
         }
     } else {
         // else means if the search field is focused. 
@@ -144,16 +154,10 @@ function onKeyUp(e) {
     }
     // quick fix since shift + ";" gives :  
     combinedMap.push(":");
-    // if (combinedMap.includes(pushedKeys) == true) {
-    //     for (let i=0; i<wasPlaying.length; i++) {
-    //         if (wasPlaying[i] == false) {
-    //             players[i].player.pauseVideo();
-    //             wasPlaying[i] = true;
-    //         }
-    //     }
-    // }
+
     keyIndex = pushedKeys.indexOf(key)
     if (combinedMap.includes(key) && keyIndex != -1) {
+        // remove key from the pushedKeys array
         pushedKeys.splice(keyIndex, 1);
         for (let i=0; i<wasPlaying.length; i++) {
             if (wasPlaying[i] == false && pushedKeys.length == 0) {
