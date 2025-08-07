@@ -30,9 +30,9 @@ const songs = [
     "url": "https://www.youtube.com/watch?v=a7Dh5QoXv2c",
   },
   {
-    "name": "Diva Dance from The Fifth Element.Full version.",
-    "channel": "Aleksandr Nevsky",
-    "url": "https://www.youtube.com/watch?v=a7Dh5QoXv2c",
+    "name": "CATHY (2021 Remaster)",
+    "channel": "Hitomi Tohyama - Topic",
+    "url": "https://www.youtube.com/watch?v=klq9uEdv1Hg",
   },
   {
     "name": "Samurai Champloo - Ending | Shiki No Uta",
