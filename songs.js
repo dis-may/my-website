@@ -35,24 +35,14 @@ const songs = [
     "url": "https://www.youtube.com/watch?v=klq9uEdv1Hg",
   },
   {
-    "name": "Samurai Champloo - Ending | Shiki No Uta",
-    "channel": "Crunchyroll",
-    "url": "https://www.youtube.com/watch?v=mQAfG3DgG7M",
-  },
-  {
-    "name": "Samurai Champloo Opening | Battlecry",
-    "channel": "Crunchyroll",
-    "url": "https://www.youtube.com/watch?v=Eq6EYcpWB_c",
+    "name": "\"Samurai Champloo - Shiki No Uta\" (Nujabes) - The Brotet",
+    "channel": "Jeraël",
+    "url": "https://www.youtube.com/watch?v=8PsG3ycLx3o",
   },
   {
     "name": "Nyan Cat! [Official]",
     "channel": "NyanCat",
     "url": "https://www.youtube.com/watch?v=2yJgwwDcgV8",
-  },
-  {
-    "name": "Go to Sleep Meme Full Version Lyrics",
-    "channel": "Layzzz",
-    "url": "https://www.youtube.com/watch?v=rm9mONrD7D4",
   },
   {
     "name": "Daler Mehndi Tunak Tunak Tun (Remastered HD)",
@@ -73,7 +63,7 @@ const songs = [
     "name": "The Beths - \"Mother, Pray For Me\" (Official)",
     "channel": "The Beths",
     "url":"https://www.youtube.com/watch?v=v71QgHSMpnk",
-  }
+  },
 
 ]
 
